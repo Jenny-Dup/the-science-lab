@@ -1,36 +1,38 @@
-<div class="container">
-  <h1 class="my-4">Welcome to The Science Lab</h1>
+<div class="main-content" style="min-height: 100vh; background: url('<%= asset_path("custom/background2.jpg") %>') no-repeat center center fixed; background-size: cover; padding-top: 60px; position: relative; z-index: 1;">
+  <div class="container pt-2">
+    <h1 class="text-center my-4 animate__animated animate__flip custom-animation">Welcome to Science Lab</h1>
 
-  <h2>Your Courses</h2>
-  <% if @enrolled_courses.any? %>
+    <h2>Your Courses</h2>
+    <% if @enrolled_courses.any? %>
+      <div class="row">
+        <% @enrolled_courses.each do |course| %>
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="course-title"><%= link_to course.title, course_path(course) %></h5>
+                <p class="card-text"><%= course.description %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p>You are not enrolled in any courses.</p>
+    <% end %>
+
+    <h2>Available Courses</h2>
     <div class="row">
-      <% @enrolled_courses.each do |course| %>
+      <% @available_courses.each do |course| %>
         <div class="col-md-6">
           <div class="card mb-4">
             <div class="card-body">
               <h5 class="card-title"><%= link_to course.title, course_path(course) %></h5>
               <p class="card-text"><%= course.description %></p>
+              <%= button_to 'Enroll', enrollments_path(course_id: course.id), method: :post, class: 'btn-profile' %>
             </div>
           </div>
         </div>
       <% end %>
     </div>
-  <% else %>
-    <p>You are not enrolled in any courses.</p>
-  <% end %>
-
-  <h2>Available Courses</h2>
-  <div class="row">
-    <% @available_courses.each do |course| %>
-      <div class="col-md-6">
-        <div class="card mb-4">
-          <div class="card-body">
-            <h5 class="card-title"><%= link_to course.title, course_path(course) %></h5>
-            <p class="card-text"><%= course.description %></p>
-            <%= button_to 'Enroll', enrollments_path(course_id: course.id), method: :post, class: 'btn btn-primary' %>
-          </div>
-        </div>
-      </div>
-    <% end %>
   </div>
 </div>

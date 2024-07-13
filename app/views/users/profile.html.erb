@@ -1,50 +1,52 @@
-<div class="profile-page">
-  <div class="container text-center">
-    <!-- Avatar -->
-    <%= image_tag @user.avatar.presence || asset_path("avatar3.png"), id: "largeAvatar", class: "large-avatar img-fluid rounded-circle mb-3" %>
+<div class="main-content pb-3" style="min-height: 100vh; background: url('<%= asset_path("custom/background2.jpg") %>') no-repeat center center fixed; background-size: cover; padding-top: 60px; position: relative; z-index: 1;">
+  <div class="profile-page">
+    <div class="container text-center pt-2 pb-3">
+      <!-- Avatar -->
+      <%= image_tag @user.avatar.presence || asset_path("avatar3.png"), id: "largeAvatar", class: "large-avatar img-fluid rounded-circle mb-3" %>
 
-    <!-- Profile Card -->
-    <div class="card mt-2 mb-2 p-3">
-      <h1 class="profile-name mb-2"><%= @user.name %> <%= @user.surname %></h1>
-      <p class="bio-text"><strong>Bio:</strong> <%= @user.bio %></p>
-    </div>
+      <!-- Profile Card -->
+      <div class="card mt-2 mb-2 p-3">
+        <h1 class="profile-name mb-2"><%= @user.name %> <%= @user.surname %></h1>
+        <p class="bio-text"><strong>Bio:</strong> <%= @user.bio %></p>
+      </div>
 
-    <!-- Enrolled Courses Card -->
-    <div class="card mt-2 mb-2 p-3">
-      <h5 class="card-title">Enrolled Courses</h5>
-      <% if @user.courses.any? %>
-        <ul class="courses-list list-unstyled">
-          <% @user.courses.each do |course| %>
-            <li><%= link_to course.title, course_path(course) %></li>
-          <% end %>
-        </ul>
-      <% else %>
-        <p>No courses enrolled yet.</p>
-      <% end %>
-    </div>
+      <!-- Enrolled Courses Card -->
+      <div class="card mt-2 mb-2 p-3">
+        <h5 class="card-title">Enrolled Courses</h5>
+        <% if @user.courses.any? %>
+          <ul class="courses-list list-unstyled">
+            <% @user.courses.each do |course| %>
+              <li><%= link_to course.title, course_path(course) %></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p>No courses enrolled yet.</p>
+        <% end %>
+      </div>
 
-    <!-- Badges Card -->
-    <div class="card mt-2 mb-2 p-3">
-      <h5 class="card-title">Badges Collected</h5>
-      <% if @badges.present? %>
-        <div class="row justify-content-center">
-          <% @badges.each do |badge| %>
-            <div class="col-4 col-md-3 col-lg-2 mb-2">
-              <%= image_tag badge.image_url, class: "badge-icon mb-2" if badge.image_url.present? %>
-              <h5 class="badge-title"><%= badge.title %></h5>
-            </div>
-          <% end %>
-        </div>
-      <% else %>
-        <p>No badges collected yet.</p>
-      <% end %>
-    </div>
+      <!-- Badges Card -->
+      <div class="card mt-2 mb-2 p-3">
+        <h5 class="card-title">Badges Collected</h5>
+        <% if @badges.present? %>
+          <div class="row justify-content-center">
+            <% @badges.each do |badge| %>
+              <div class="col-4 col-md-3 col-lg-2 mb-2">
+                <%= image_tag badge.image_url, class: "badge-icon mb-2" if badge.image_url.present? %>
+                <h5 class="badge-title"><%= badge.title %></h5>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <p>No badges collected yet.</p>
+        <% end %>
+      </div>
 
-    <!-- Edit Profile Button -->
-    <div class="text-center mt-3">
-      <%= link_to edit_user_registration_path, class: "btn-profile" do %>
-        <i class="fas fa-pencil-alt"></i> Edit Profile
-      <% end %>
+      <!-- Edit Profile Button -->
+      <div class="text-center mt-3">
+        <%= link_to edit_user_registration_path, class: "btn-profile" do %>
+          <i class="fas fa-pencil-alt"></i> Edit Profile
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

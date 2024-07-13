@@ -1,9 +1,3 @@
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
 .course-list {
   list-style: none;
   padding: 0;
@@ -34,4 +28,34 @@
   text-align: center;
   text-decoration: none;
   margin-top: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-size: cover;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.opaque-navbar {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding-top: 60px;
 }

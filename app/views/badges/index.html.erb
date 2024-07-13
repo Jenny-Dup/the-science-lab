@@ -1,19 +1,22 @@
-<div class="container">
-  <h1 class="my-4">Badges</h1>
+<div class="main-content" style="min-height: 100vh; background: url('<%= asset_path("custom/background2.jpg") %>') no-repeat center center fixed; background-size: cover; padding-top: 60px; position: relative; z-index: 1;">
+  <div class="container text-center pt-2">
+    <h1 class="my-4">Badges</h1>
+    <p>Discover all the amazing badges you could collect if you complete your lessons.</p>
 
-  <div class="row">
-    <% @badges.each do |badge| %>
-      <div class="col-md-4 mb-4">
-        <div class="card badge-card">
-          <div class="card-body front">
-            <%= image_tag badge.image_url, class: "badge-image" if badge.image_url.present? %>
-          </div>
-          <div class="card-body back">
-            <h5 class="card-title"><%= badge.title %></h5>
-            <p class="card-text"><%= badge.description %></p>
+    <div class="row">
+      <% @badges.each do |badge| %>
+        <div class="col-md-4 mb-4">
+          <div class="card badge-card">
+            <div class="card-body front">
+              <%= image_tag badge.image_url, class: "badge-image" if badge.image_url.present? %>
+            </div>
+            <div class="card-body back">
+              <h5 class="card-title"><%= badge.title %></h5>
+              <p class="card-text"><%= badge.description %></p>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

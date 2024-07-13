@@ -40,27 +40,12 @@
   border-radius: 50%;
 }
 
-.profile-page {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background: #f7f7f7;
-}
-
 .card {
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
-}
-
-.profile-name {
-  font-family: 'Space Grotesk', Arial, sans-serif;
-  color: #A64AC9;
 }
 
 .bio-text, .card-title, .badge-title {
@@ -95,19 +80,23 @@
 
 .courses-list li a:hover {
   text-decoration: underline;
-  color: #17E9E0;
-
+  color: #e0c9aa;
 }
 
 .btn-profile {
   margin-top: 20px;
-  background-color: #A64AC9;
+  background-color: #ab90c7;
+  border: 2px solid;
+  border-color: #725c89;
   color: white;
   padding: 10px 20px;
-  border-radius: 5px;
+  text-decoration: none;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .btn-profile:hover {
-  background-color: #FFB48F;
+  background-color: #e0c9aa;
   color: white;
+  text-decoration: none;
 }

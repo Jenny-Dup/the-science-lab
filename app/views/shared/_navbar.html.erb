@@ -1,5 +1,8 @@
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top opaque-navbar">
     <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="<%= asset_path('logo/logo.png') %>" alt="Science Lab Logo" class="navbar-logo">
+      </a>
       <%= link_to 'Science Lab', root_path, class: 'navbar-brand' %>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

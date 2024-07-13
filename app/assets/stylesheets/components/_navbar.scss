@@ -11,21 +11,21 @@
   width: 40px;
 }
 
-.avatar-option {
-  display: inline-block;
-  margin: 10px;
-  cursor: pointer;
+/* Change the font family and color of the brand link */
+.navbar-brand {
+  font-family: 'Space Grotesk', sans-serif; /* Change to your desired font */
+  color: #000000 !important; /* Change to your desired color */
+  font-size: 24px; /* Adjust font size as needed */
 }
 
-.selectable-avatar {
-  border: 2px solid transparent;
-  transition: border-color 0.3s ease;
+/* Change the font family and color of the nav links */
+.nav-link {
+  font-family: 'Arial', sans-serif; /* Change to your desired font */
+  color: #959090 !important; /* Change to your desired color */
+  font-size: 16px; /* Adjust font size as needed */
 }
 
-.selectable-avatar:hover {
-  border-color: #007bff;
-}
-
-.selectable-avatar.selected {
-  border-color: #007bff;
+.navbar-logo {
+  width: 30px;
+  height: 30px;
 }

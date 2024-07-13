@@ -172,7 +172,7 @@ def create_multiple_choice_question(experiment, content, choices)
     options: options.join(','), # join options into a comma-separated string
     correct_option: correct_options.join(',') # join correct options into a comma-separated string
   )
-  
+
   choices.each do |choice|
     AnswerChoice.create!(question: question, content: choice[:content], correct: choice[:correct])
   end
@@ -217,7 +217,7 @@ create_multiple_choice_question(experiment1, 'What are the properties of water?'
   { content: 'Conducts something else completely', correct: false }
 ])
 
-create_word_bank_question(experiment1, 'Fill in the blanks: Water is made up of two _____ atoms and one _____ atom.', [
+create_word_bank_question(experiment1, 'Fill in the blanks: Water is made up of two _____ atoms and one _____ atom. Also name 2 incorrect elements.', [
   { content: 'Hydrogen', correct: true },
   { content: 'Oxygen', correct: true },
   { content: 'Carbon', correct: false },
@@ -237,7 +237,7 @@ create_multiple_choice_question(experiment2, 'What are the properties of hydroch
   { content: 'Odorless', correct: false }
 ])
 
-create_word_bank_question(experiment2, 'Fill in the blanks: Hydrochloric acid is made up of one _____ atom and one _____ atom.', [
+create_word_bank_question(experiment2, 'Fill in the blanks: Hydrochloric acid is made up of one _____ atom and one _____ atom. Also name 2 incorrect elements', [
   { content: 'Hydrogen', correct: true },
   { content: 'Chlorine', correct: true },
   { content: 'Carbon', correct: false },
@@ -257,7 +257,7 @@ create_multiple_choice_question(experiment3, 'What are the properties of sodium 
   { content: 'Liquid at room temperature', correct: false }
 ])
 
-create_word_bank_question(experiment3, 'Fill in the blanks: Sodium chloride is made up of one _____ atom and one _____ atom.', [
+create_word_bank_question(experiment3, 'Fill in the blanks: Sodium chloride is made up of one _____ atom and one _____ atom. Also name 2 incorrect elements', [
   { content: 'Sodium', correct: true },
   { content: 'Chlorine', correct: true },
   { content: 'Hydrogen', correct: false },

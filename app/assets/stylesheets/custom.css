@@ -11,3 +11,13 @@
   margin-top: 10px;
 }
 
+.flash-messages-container {
+  position: relative;
+  z-index: 1050;
+  margin-top: 60px;
+}
+
+.custom-animation {
+  animation-duration: 5s;
+  animation-delay: 0.5s;
+}
